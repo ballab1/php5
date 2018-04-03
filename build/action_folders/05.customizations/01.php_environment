@@ -1,0 +1,9 @@
+#!/bin/bash
+
+declare -r exportVars='SESSIONS_DIR RUN_DIR WORKING_DIR'
+
+export SESSIONS_DIR=${SESSIONS_DIR:-/sessions}
+export RUN_DIR=${RUN_DIR:-/var/run/php}
+export WORKING_DIR=${WORKING_DIR:-/var/www}
+
+lib.createFileForRuntimeEnvironment "php_definitions" "$exportVars" 
