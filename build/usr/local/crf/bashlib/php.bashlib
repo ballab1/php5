@@ -8,3 +8,4 @@ function php.fixupDirectory()
     find "$dir" -type d -exec chmod 777 '{}' \;
     find "$dir" -type f -exec chmod 666 '{}' \;
 }
+export -f php.fixupDirectory

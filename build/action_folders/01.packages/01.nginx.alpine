@@ -1,7 +1,4 @@
 # nginx Packages
 
-if [ "${CBF['os_id']}" = 'alpine' ]; then
-    declare PKGS='fcgiwrap nginx '
-    package.checkIfInstalled "$PKGS"
-    apk add --no-cache $PKGS
-fi
+declare -a PKGS=( fcgiwrap
+                  nginx )
