@@ -7,7 +7,6 @@ services:
                 CBF_VERSION: ${CBF_VERSION:-dev}
                 CONTAINER_NAME: php5
                 CONTAINER_VERSION: 1.0.8
-                DEBUG_TRACE: 0
                 FROM_BASE: supervisord:latest
             cache_from:
                 - alpine:3.6
@@ -16,6 +15,8 @@ services:
             context: .
             dockerfile: Dockerfile
         container_name: php5
+        environment:
+            DEBUG_TRACE: ${DEBUG_TRACE:-0}
         hostname: php5
         image: php5:latest
         logging:

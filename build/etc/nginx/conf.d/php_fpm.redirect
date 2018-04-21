@@ -16,7 +16,7 @@ location ~ \.php$ {
     fastcgi_param PATH_INFO $path_info;
     fastcgi_read_timeout 1200;
     fastcgi_buffering off;
-    fastcgi_pass php5_fpm;
+    fastcgi_pass php_fpm;
     fastcgi_index index.php;
     include /etc/nginx/fastcgi.conf; 
 }
