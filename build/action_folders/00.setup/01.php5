@@ -5,7 +5,7 @@ declare -ar env_php5=(
     'RUN_DIR="${RUN_DIR:-/var/run/php}"'
 )
 
-lib.updateRuntimeEnvironment "${env_php5[*]}" 
+crf.updateRuntimeEnvironment "${env_php5[*]}" 
 
-lib.copyFileToRuntime 'LIB' 'nginx.bashlib'
-lib.copyFileToRuntime 'LIB' 'php.bashlib'
+crf.copyFileToRuntime 'LIB' 'nginx.bashlib'
+crf.copyFileToRuntime 'LIB' 'php.bashlib'
