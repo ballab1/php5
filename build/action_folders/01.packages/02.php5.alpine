@@ -1,17 +1,26 @@
 # php packages
 
-declare -a PKGS=( php5-fpm
+
+declare -a PKGS=( php5-bz2
                   php5-ctype
                   php5-cgi
                   php5-common
                   php5-dom
+                  php5-curl
+                  php5-fpm
+                  php5-gd
                   php5-iconv
                   php5-json
-                  php5-mysql
-                  php5-pgsql
+                  php5-mbstring
+                  php5-mysqli
+                  php5-opcache
+                  php5-openssl
                   php5-posix
+                  php5-session
                   php5-sockets
+                  php5-xml
                   php5-xml
                   php5-xmlreader
                   php5-xmlrpc
-                  php5-zip )
+                  php5-zip
+                  php5-zlib )
