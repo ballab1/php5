@@ -28,7 +28,7 @@ services:
             SUPERVISORD_PASS: $CFG_PASS
             SUPERVISORD_USER: $CFG_USER
         hostname: php5
-        image: ${DOCKER_REGISTRY:-}php5:${CONTAINER_TAG:-latest}
+        image: ${DOCKER_REGISTRY:-}php/5.6.37-r0:${CONTAINER_TAG:-latest}
         logging:
             driver: json-file
             options:
