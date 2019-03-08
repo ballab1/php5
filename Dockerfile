@@ -1,24 +1,28 @@
-ARG FROM_BASE=supervisord:20180325
+ARG FROM_BASE=${DOCKER_REGISTRY:-ubuntu-s2:5000/}${CONTAINER_OS:-alpine}/nginx-base/${NGINX_VERSION:-1.15.3}:${BASE_TAG:-latest}
 FROM $FROM_BASE
 
 # name and version of this docker image
 ARG CONTAINER_NAME=php5
-ARG CONTAINER_VERSION=1.0.7
+# Specify CBF version to use with our configuration and customizations
+ARG CBF_VERSION
 
-LABEL org_name=$CONTAINER_NAME \
-      version=$CONTAINER_VERSION 
+# include our project files
+COPY build Dockerfile /tmp/
 
 # set to non zero for the framework to show verbose action scripts
-ARG DEBUG_TRACE=0
+#    (0:default, 1:trace & do not cleanup; 2:continue after errors)
+ENV DEBUG_TRACE=0
 
 
-# Add configuration and customizations
-COPY build /tmp/
+# php version being bundled in this docker image
+ARG PHP5_VERSION=5.6.37-r0
+LABEL version.php=$PHP5_VERSION 
+
 
 # build content
 RUN set -o verbose \
     && chmod u+rwx /tmp/build.sh \
-    && /tmp/build.sh "$CONTAINER_NAME"
+    && /tmp/build.sh "$CONTAINER_NAME" "$DEBUG_TRACE"
 RUN [ $DEBUG_TRACE != 0 ] || rm -rf /tmp/* 
 
 
