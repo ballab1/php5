@@ -1,4 +1,4 @@
-ARG FROM_BASE=${DOCKER_REGISTRY:-ubuntu-s2:5000/}${CONTAINER_OS:-alpine}/nginx-base/${NGINX_VERSION:-1.15.3}:${BASE_TAG:-latest}
+ARG FROM_BASE=${DOCKER_REGISTRY:-ubuntu-s2:5000/}${CONTAINER_OS:-alpine}/nginx-base/${NGINX_VERSION:-1.16.1}:${BASE_TAG:-latest}
 FROM $FROM_BASE
 
 # name and version of this docker image
@@ -15,7 +15,7 @@ ENV DEBUG_TRACE=0
 
 
 # php version being bundled in this docker image
-ARG PHP5_VERSION=5.6.37-r0
+ARG PHP5_VERSION=5.6.40-r0
 LABEL version.php=$PHP5_VERSION 
 
 
