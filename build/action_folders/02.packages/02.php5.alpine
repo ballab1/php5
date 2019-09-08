@@ -2,6 +2,7 @@
 
 
 declare -a PKGS=( curl
+                  php5
                   php5-bz2
                   php5-ctype
                   php5-cgi
@@ -19,6 +20,7 @@ declare -a PKGS=( curl
                   php5-mysqli
                   php5-opcache
                   php5-openssl
+                  php5-phar
                   php5-pear
 #                  php5-phpdbg
                   php5-posix
