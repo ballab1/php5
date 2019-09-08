@@ -25,7 +25,6 @@ declare -a PKGS=( curl
 #                  php5-phpdbg
                   php5-posix
                   php5-sockets
-                  php5-tidy
                   php5-xml
                   php5-xmlreader
                   php5-xmlrpc
