@@ -6,4 +6,4 @@ declare -ar env_php=(
     'RUN_DIR="${RUN_DIR:-/run/php}"'
 )
 
-crf.updateRuntimeEnvironment "${env_php[@]}"
+crf::updateRuntimeEnvironment "${env_php[@]}"
